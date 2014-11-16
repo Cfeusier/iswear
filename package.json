@@ -1,0 +1,14 @@
+{
+  "name": "oath",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "mocha test/oath.js"
+  },
+  "repository": "https://github.com/hackreactor-labs/oath",
+  "dependencies": {
+    "chai": "^1.9.1",
+    "jquery": "^2.1.1",
+    "mocha": "^1.18.2",
+    "underscore": "^1.6.0"
+  }
+}
