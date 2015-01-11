@@ -1,10 +1,11 @@
 {
-  "name": "oath",
-  "version": "0.0.0",
+  "name": "swear",
+  "version": "0.0.1",
+  "author": "Clark Feusier",
   "scripts": {
     "test": "mocha test/oath.js"
   },
-  "repository": "https://github.com/hackreactor-labs/oath",
+  "repository": "https://github.com/Cfeusier/swear",
   "dependencies": {
     "chai": "^1.9.1",
     "jquery": "^2.1.1",
