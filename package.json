@@ -1,9 +1,10 @@
 {
   "name": "swear",
   "version": "0.0.1",
-  "author": "Clark Feusier",
+  "description": "Lightweight Promise library that conforms to the Promises/A+ specification for Promise implementations",
+  "main": "lib/swear.js",
   "scripts": {
-    "test": "mocha test/oath.js"
+    "test": "for f in test/*; do echo \"$f\"; mocha \"$f\"; done; exit 0"
   },
   "repository": "https://github.com/Cfeusier/swear",
   "dependencies": {
@@ -11,5 +12,7 @@
     "jquery": "^2.1.1",
     "mocha": "^1.18.2",
     "underscore": "^1.6.0"
-  }
+  },
+  "author": "Clark Feusier",
+  "license": "MIT"
 }
