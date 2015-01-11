@@ -2,7 +2,7 @@
 
 ***Swear*** conforms to the [Promises/A+](https://promisesaplus.com/) specification for Promise implementations.
 
-## API Docs
+## Documentation
 
 `npm install --save swear`
 
@@ -10,7 +10,7 @@
 
 1. Underscore.js
 
-- if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore
+* *if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore*
 
 ---
 
