@@ -13,6 +13,11 @@
     "mocha": "^1.18.2",
     "underscore": "^1.6.0"
   },
+  "keywords": [
+    "promise",
+    "a+",
+    "deferred"
+  ],
   "author": "Clark Feusier",
   "license": "MIT"
 }
