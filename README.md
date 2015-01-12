@@ -4,7 +4,7 @@
 
 ## Documentation
 
-`npm install --save iswear`
+`npm install iswear`
 
 ### Dependencies
 
