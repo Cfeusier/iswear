@@ -1,16 +1,19 @@
-# Swear
+# iswear
 
-***Swear*** conforms to the [Promises/A+](https://promisesaplus.com/) specification for Promise implementations.
+***iswear*** conforms to the [Promises/A+](https://promisesaplus.com/) specification for Promise implementations.
 
 ## Documentation
 
-`npm install --save swear`
+`npm install --save iswear`
 
 ### Dependencies
 
 1. Underscore.js
 
-* *if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore*
+*if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore*
+
+### Usage Examples
+
 
 ---
 

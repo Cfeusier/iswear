@@ -1,20 +1,20 @@
 /* globals describe, it, xit */
 var chai   = require('chai');
-var swear   = require('../lib/swear.js');
+var iswear   = require('../lib/iswear.js');
 var expect = chai.expect;
 var _      = require('underscore');
 
-swear.promisify = swear.promisify || function () {};
+iswear.promisify = iswear.promisify || function () {};
 
 var promiseTimeout = function (func, time) {
-  var defer = swear.defer();
+  var defer = iswear.defer();
   setTimeout(function () {
     defer.resolve(func());
   }, time);
   return defer.promise;
 };
 
-describe('swear', function () {
+describe('iswear', function () {
   describe('Promise', function () {
     describe('.then', function () {
       it('should call then on a promise resolution', function (done) {
@@ -39,7 +39,7 @@ describe('swear', function () {
     describe('.catch', function () {
       it('should call catch on a rejection', function (done) {
         var failingPromise = function () {
-          var defer = swear.defer();
+          var defer = iswear.defer();
           setTimeout(function () {
             defer.reject();
           }, 5);
@@ -53,7 +53,7 @@ describe('swear', function () {
 
       it('should call catch with the error passed to .reject', function (done) {
         var failingPromise = function () {
-          var defer = swear.defer();
+          var defer = iswear.defer();
           setTimeout(function () {
             defer.reject('Oh no!');
           }, 5);
@@ -81,7 +81,7 @@ describe('swear', function () {
       });
     };
 
-    var promised = swear.promisify(nodeStyle);
+    var promised = iswear.promisify(nodeStyle);
     xit('should call then on success', function (done) {
       promised(bigEnough)
         .then(function (message) {
@@ -127,7 +127,7 @@ describe('swear', function () {
       };
 
       var failingStep = function () {
-        var defer = swear.defer();
+        var defer = iswear.defer();
         setTimeout(function () {
           defer.reject('Oops!');
         }, 5);
@@ -136,7 +136,7 @@ describe('swear', function () {
 
       var didItRun = false;
       var shouldntRun = function (num) {
-        var defer = swear.defer();
+        var defer = iswear.defer();
         didItRun = true;
         setTimeout(_.partial(defer.resolve.bind(defer), num), 5);
         return defer.promise;

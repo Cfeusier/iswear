@@ -1,12 +1,12 @@
 {
-  "name": "swear",
+  "name": "iswear",
   "version": "0.0.1",
   "description": "Lightweight Promise library that conforms to the Promises/A+ specification for Promise implementations",
-  "main": "lib/swear.js",
+  "main": "lib/iswear.js",
   "scripts": {
     "test": "for f in test/*; do echo \"$f\"; mocha \"$f\"; done; exit 0"
   },
-  "repository": "https://github.com/Cfeusier/swear",
+  "repository": "https://github.com/Cfeusier/iswear",
   "dependencies": {
     "chai": "^1.9.1",
     "jquery": "^2.1.1",
