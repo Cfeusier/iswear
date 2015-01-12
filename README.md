@@ -47,6 +47,12 @@ findPromised({ email: "example@gmail.com" }).then(function(user) {
 
 ### Contributing
 
+- Fork the repository
+- Clone the forked repo to your local machine
+- Fix or extend the code locally
+- Push to your remote forked repo
+- Submit an intelligible pull request
+
 ---
 
 This is a project I completed while studying at [Hack Reactor](http://hackreactor.com).
