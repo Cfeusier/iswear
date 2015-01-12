@@ -4,13 +4,9 @@
 
 ## Documentation
 
+### Installation
+
 `npm install iswear`
-
-### Dependencies
-
-1. Underscore.js
-
-*if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore*
 
 ### Usage Examples
 
@@ -39,12 +35,17 @@ findPromised({ email: "example@gmail.com" }).then(function(user) {
 });
 ```
 
+### Dependencies
+
+1. Underscore.js
+
+*if you would like to run (or write) tests, you will need to add mocha, chai, and jQuery, in addition to underscore*
+
 ### Running the Tests
 
 `npm test`
 
 ### Contributing
-
 
 ---
 
