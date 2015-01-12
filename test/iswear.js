@@ -4,7 +4,7 @@ var iswear   = require('../lib/iswear.js');
 var expect = chai.expect;
 var _      = require('underscore');
 
-iswear.promisify = iswear.promisify || function () {};
+iswear.swearify = iswear.swearify || function () {};
 
 var promiseTimeout = function (func, time) {
   var defer = iswear.defer();
@@ -68,7 +68,7 @@ describe('iswear', function () {
     });
   });
 
-  describe('promisify', function () {
+  describe('swearify', function () {
     var bigEnough = 100;
     var tooSmall = 10;
     var nodeStyle = function (num, callback) {
@@ -81,8 +81,8 @@ describe('iswear', function () {
       });
     };
 
-    var promised = iswear.promisify(nodeStyle);
-    xit('should call then on success', function (done) {
+    var promised = iswear.swearify(nodeStyle);
+    it('should call then on success', function (done) {
       promised(bigEnough)
         .then(function (message) {
           expect(message).to.equal('That\'s a big number!');
@@ -90,7 +90,7 @@ describe('iswear', function () {
         });
     });
 
-    xit('should call catch on error', function (done) {
+    it('should call catch on error', function (done) {
       promised(tooSmall)
         .catch(function (message) {
           expect(message).to.equal('Not big enough!');
