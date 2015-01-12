@@ -1,4 +1,4 @@
-# I Swear
+# iswear
 
 ***iswear*** conforms to the [Promises/A+](https://promisesaplus.com/) specification for Promise implementations.
 
