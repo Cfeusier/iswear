@@ -190,7 +190,6 @@ function resolvable(cb, _failure, success) {
  * @param {[function]} ctx [the context in which to invoke the swearified function]
  * @return [function] [swearified function created out of provided callback function]
  */
-//
 function swearify(cb, ctx) {
   return function() {
     var args = Array.prototype.slice.call(arguments);
