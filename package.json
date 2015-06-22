@@ -1,19 +1,17 @@
 {
   "name": "iswear",
-  "version": "0.0.3",
-  "description": "Lightweight Promise library that conforms to the Promises/A+ specification for Promise implementations",
+  "version": "1.0.0",
+  "description": "Light-weight utility library for performant asynchronous programming with Promises",
   "author": "Clark Feusier <cfeusier@gmail.com>",
   "license": "MIT",
   "main": "dist/iswear.min.js",
-  "scripts": {
-    "test": "for f in test/*; do echo \"$f\"; mocha \"$f\"; done; exit 0"
-  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-uglify": "^0.9.1",
+    "grunt-shell": "^1.1.2",
     "mocha": "^1.18.2",
     "underscore": "^1.8.3"
   },
@@ -21,7 +19,9 @@
     "promise",
     "a+",
     "deferred",
-    "async"
+    "async",
+    "performant",
+    "light-weight"
   ],
   "repository": {
     "type": "git",
