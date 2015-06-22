@@ -1,23 +1,36 @@
 {
   "name": "iswear",
-  "version": "0.0.3",
-  "description": "Lightweight Promise library that conforms to the Promises/A+ specification for Promise implementations",
-  "main": "lib/iswear.js",
-  "scripts": {
-    "test": "for f in test/*; do echo \"$f\"; mocha \"$f\"; done; exit 0"
-  },
-  "repository": "https://github.com/Cfeusier/iswear",
-  "dependencies": {
+  "version": "1.0.0",
+  "description": "Light-weight utility library for performant asynchronous programming with Promises",
+  "author": "Clark Feusier <cfeusier@gmail.com>",
+  "license": "MIT",
+  "main": "dist/iswear.min.js",
+  "dependencies": {},
+  "devDependencies": {
     "chai": "^1.9.1",
-    "jquery": "^2.1.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-shell": "^1.1.2",
     "mocha": "^1.18.2",
-    "underscore": "^1.6.0"
+    "underscore": "^1.8.3"
   },
   "keywords": [
     "promise",
     "a+",
-    "deferred"
+    "deferred",
+    "async",
+    "performant",
+    "light-weight"
   ],
-  "author": "Clark Feusier",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cfeusier/iswear.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cfeusier/iswear/issues"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
 }

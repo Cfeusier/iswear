@@ -1,66 +1,65 @@
-/* globals describe, it, xit */
+var iswear   = require('../dist/iswear.min.js');
 var chai   = require('chai');
-var iswear   = require('../lib/iswear.js');
 var expect = chai.expect;
 var _      = require('underscore');
 
-iswear.swearify = iswear.swearify || function () {};
+iswear.swearify = iswear.swearify || function() {};
 
-var promiseTimeout = function (func, time) {
+var promiseTimeout = function(func, time) {
   var defer = iswear.defer();
-  setTimeout(function () {
+  setTimeout(function() {
     defer.resolve(func());
   }, time);
   return defer.promise;
 };
 
-describe('iswear', function () {
-  describe('Promise', function () {
-    describe('.then', function () {
-      it('should call then on a promise resolution', function (done) {
-        promiseTimeout(function () {}, 5)
+describe('iswear', function() {
+  describe('Promise', function() {
+    describe('.then', function() {
+      it('should call then on a promise resolution', function(done) {
+        promiseTimeout(function() {}, 5)
           .then(done);
       });
 
-      it('should pass a resolved value to then', function (done) {
-        var makePromise = function (num) {
-          return promiseTimeout(function () {
+      it('should pass a resolved value to then', function(done) {
+        var makePromise = function(num) {
+          return promiseTimeout(function() {
             return num;
           });
         };
         makePromise(6)
-          .then(function (num) {
+          .then(function(num) {
             expect(num).to.equal(6);
             done();
           });
       });
     });
 
-    describe('.catch', function () {
-      it('should call catch on a rejection', function (done) {
-        var failingPromise = function () {
+    describe('.catch', function() {
+      it('should call catch on a rejection', function(done) {
+        var failingPromise = function() {
           var defer = iswear.defer();
-          setTimeout(function () {
+          setTimeout(function() {
             defer.reject();
           }, 5);
           return defer.promise;
         };
         failingPromise()
-          .catch(function () {
+          .catch(function() {
             done();
           });
       });
 
-      it('should call catch with the error passed to .reject', function (done) {
-        var failingPromise = function () {
+      it('should call catch with the error passed to .reject', function(done) {
+        var failingPromise = function() {
           var defer = iswear.defer();
-          setTimeout(function () {
+          setTimeout(function() {
             defer.reject('Oh no!');
           }, 5);
           return defer.promise;
         };
         failingPromise()
-          .catch(function (err) {
+          .catch(function(err) {
             expect(err).to.equal('Oh no!');
             done();
           });
@@ -68,11 +67,11 @@ describe('iswear', function () {
     });
   });
 
-  describe('swearify', function () {
+  describe('swearify', function() {
     var bigEnough = 100;
     var tooSmall = 10;
-    var nodeStyle = function (num, callback) {
-      setTimeout(function () {
+    var nodeStyle = function(num, callback) {
+      setTimeout(function() {
         if (num > 50) {
           callback(null, 'That\'s a big number!');
         } else {
@@ -82,60 +81,60 @@ describe('iswear', function () {
     };
 
     var promised = iswear.swearify(nodeStyle);
-    it('should call then on success', function (done) {
+    it('should call then on success', function(done) {
       promised(bigEnough)
-        .then(function (message) {
+        .then(function(message) {
           expect(message).to.equal('That\'s a big number!');
           done();
         });
     });
 
-    it('should call catch on error', function (done) {
+    it('should call catch on error', function(done) {
       promised(tooSmall)
-        .catch(function (message) {
+        .catch(function(message) {
           expect(message).to.equal('Not big enough!');
           done();
         });
     });
   });
 
-  describe('chaining', function () {
-    it('should allow you to chain promises using then', function (done) {
-      var step1 = function (num) {
-        return promiseTimeout(function () {
+  describe('chaining', function() {
+    it('should allow you to chain promises using then', function(done) {
+      var step1 = function(num) {
+        return promiseTimeout(function() {
           return num + 10;
         }, 5);
       };
 
-      var step2 = function (num) {
-        return promiseTimeout(function () {
+      var step2 = function(num) {
+        return promiseTimeout(function() {
           return num + 20;
         }, 5);
       };
 
-      step1(100).then(step2).then(function (num) {
+      step1(100).then(step2).then(function(num) {
         expect(num).to.equal(130);
         done();
       });
     });
 
-    it('should jump directly to catch if an error is thrown during chaining', function (done) {
-      var step1 = function (num) {
-        return promiseTimeout(function () {
+    it('should jump directly to catch if an error is thrown during chaining', function(done) {
+      var step1 = function(num) {
+        return promiseTimeout(function() {
           return num + 10;
         }, 5);
       };
 
-      var failingStep = function () {
+      var failingStep = function() {
         var defer = iswear.defer();
-        setTimeout(function () {
+        setTimeout(function() {
           defer.reject('Oops!');
         }, 5);
         return defer.promise;
       };
 
       var didItRun = false;
-      var shouldntRun = function (num) {
+      var shouldntRun = function(num) {
         var defer = iswear.defer();
         didItRun = true;
         setTimeout(_.partial(defer.resolve.bind(defer), num), 5);
